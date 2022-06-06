@@ -1,0 +1,112 @@
+<template>
+  <div class="id">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h1 style="color: red">Supervisor List</h1>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-danger" @click="logout">
+              Logout
+            </button>
+          </div>
+        </div>
+        <br />
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Add User</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody v-for="(supervisor, index) in supervisors" :key="index">
+            <tr class="data">
+              <th scope="row">{{ supervisor.id }}</th>
+              <td>{{ supervisor.name }}</td>
+              <td>{{ supervisor.age }}</td>
+              <td>{{ supervisor.gender }}</td>
+              <td>
+                <button
+                  class="btn btn-outline-primary"
+                  @click="addUser"
+                  v-if="supervisor.id == user && role"
+                > 
+                  Add
+                </button>
+              </td>
+              <td>
+                <button
+                  class="btn btn-outline-info"
+                  @click="showDetails(supervisor)"
+                  v-if="(supervisor.id == user && role) || adminRole"
+                >
+                  Detail
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br /><br />
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-outline-primary" @click="goToUser">
+          Go to User
+        </button>
+      </div>
+      <div class="col">
+        <button class="btn btn-outline-primary" @click="goToAdmin">
+          Go To Admin
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { mapState } from "vuex";
+export default {
+  name: "supervisor",
+  data() {
+    return {
+      user: JSON.parse(localStorage.getItem("registerUser")).id,
+      role:
+        JSON.parse(localStorage.getItem("registerUser")).role == "Supervisor",
+      adminRole:
+        JSON.parse(localStorage.getItem("registerUser")).role == "Admin",
+    };
+  },
+  mounted() {
+    this.$store.dispatch("loadSupervisors");
+  },
+  computed: {
+    ...mapState(["supervisors"]),
+  },
+  methods: {
+    logout() {
+      this.$router.push("/login");
+    },
+    showDetails(supervisor) {
+      this.$router.push({
+        name: "supervisor-detail",
+        params: supervisor,
+      });
+    },
+    goToUser() {
+      this.$router.push("/user");
+    },
+    goToAdmin() {
+      this.$router.push("/admin");
+    },
+    addUser() {
+      this.$router.push("/addUser");
+    },
+  },
+};
+</script>

@@ -1,29 +1,60 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "register",
+    component: () => import("../components/Register.vue"),
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: "/login",
+    name: "login",
+    component: () => import("../components/Login.vue"),
+  },
+  {
+    path: "/admin",
+    name: "admin",
+    component: () => import("../views/Admin/Admin.vue"),
+  },
+  {
+    path: "/addSupervisor",
+    name: "addSupervisor",
+    component: () => import("../views/Admin/AddSupervisor.vue"),
+  },
+  {
+    path: "/supervisor",
+    name: "supervisor",
+    component: () => import("../views/Supervisor/Supervisor.vue"),
+  },
+  {
+    path: "/supervisor-details/:id",
+    name: "supervisor-detail",
+    component: () => import("../views/Supervisor/SupervisorDetail.vue"),
+  },
+  {
+    path: "/addUser",
+    name: "addUser",
+    component: () => import("../views/Supervisor/AddUser.vue"),
+  },
+  {
+    path: "/user",
+    name: "user",
+    component: () => import("../views/User/User.vue"),
+  },
+  {
+    path: "/user-details/:id",
+    name: "user-detail",
+    component: () => import("../views/User/UserDetail.vue"),
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
