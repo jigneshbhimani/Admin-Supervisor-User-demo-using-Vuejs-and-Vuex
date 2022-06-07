@@ -76,6 +76,7 @@ export default {
   name: "Add User",
   data() {
     return {
+      super_id: "",
       user: {
         name: "",
         email: "",
@@ -86,8 +87,13 @@ export default {
       },
     };
   },
+  mounted() {
+    this.super_id = JSON.parse(localStorage.getItem("registerUser")).id;
+  },
   methods: {
     addUser() {
+      this.user["super_id"] = this.super_id;
+      localStorage.setItem("user_super_id", this.super_id);
       axios.post("http://localhost:3000/users", this.user).then(
         function (response) {
           console.log(response);

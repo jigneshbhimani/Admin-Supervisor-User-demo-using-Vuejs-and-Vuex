@@ -13,7 +13,7 @@
           </div>
         </div>
         <br />
-        <table class="table table-bordered">
+        <table class="table table-dark">
           <thead class="thead-dark">
             <tr>
               <th scope="col">ID</th>
@@ -35,7 +35,10 @@
                 <button
                   class="btn btn-outline-info"
                   @click="addSupervisor(admin)"
-                  v-if="(admin.id == superadmin && role) || supervisorRole"
+                  v-if="
+                    (admin.id == superadmin && role) ||
+                    (role == supervisorRole && role == userRole)
+                  "
                 >
                   Add
                 </button>
@@ -71,6 +74,7 @@ export default {
       role: JSON.parse(localStorage.getItem("registerUser")).role == "Admin",
       supervisorRole:
         JSON.parse(localStorage.getItem("registerUser")).role == "Supervisor",
+      userRole: JSON.parse(localStorage.getItem("registerUser")).role == "User",
     };
   },
   mounted() {

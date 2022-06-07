@@ -13,8 +13,8 @@
           </div>
         </div>
         <br />
-        <table class="table table-bordered">
-          <thead class="thead-dark">
+        <table class="table table-dark">
+          <thead>
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Name</th>
@@ -33,7 +33,11 @@
                 <button
                   class="btn btn-outline-info"
                   @click="showDetails(user)"
-                  v-if="(user.id == superuser && role) || userRole"
+                  v-if="
+                    (user.id == superuser && role) ||
+                    userRole ||
+                    user.super_id == usersRolling
+                  "
                 >
                   Detail
                 </button>
@@ -69,6 +73,7 @@ export default {
       role: JSON.parse(localStorage.getItem("registerUser")).role == "User",
       userRole:
         JSON.parse(localStorage.getItem("registerUser")).role == "Admin",
+      usersRolling: localStorage.getItem("user_super_id"),
     };
   },
   mounted() {

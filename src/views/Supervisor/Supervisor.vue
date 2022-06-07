@@ -13,7 +13,7 @@
           </div>
         </div>
         <br />
-        <table class="table table-bordered">
+        <table class="table table-dark">
           <thead class="thead-dark">
             <tr>
               <th scope="col">ID</th>
@@ -35,7 +35,7 @@
                   class="btn btn-outline-primary"
                   @click="addUser"
                   v-if="supervisor.id == user && role"
-                > 
+                >
                   Add
                 </button>
               </td>
