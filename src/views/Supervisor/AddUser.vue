@@ -2,60 +2,74 @@
   <div class="id">
     <div class="card">
       <div class="card-body">
-        <form class="form-group">
+        <form class="form-group" style="margin: auto">
           <div class="col">
-            <label><b>Name: </b></label>
             <input
               type="text"
               v-model="user.name"
               placeholder="Enter name..."
               required
+              style="border-radius: 10px"
             />
           </div>
           <br />
           <div class="col">
-            <label><b>Email: </b></label>
             <input
               type="email"
               v-model="user.email"
               placeholder="Enter email..."
               required
+              style="border-radius: 10px"
             />
           </div>
           <br />
           <div class="col">
-            <label><b>Age: </b></label>
             <input
               type="number"
               v-model="user.age"
               placeholder="Enter age..."
               required
+              style="border-radius: 10px"
             />
           </div>
           <br />
           <div class="col">
-            <label><b>Gender: </b></label>
             <input
               type="text"
               v-model="user.gender"
               placeholder="Enter gender..."
               required
+              style="border-radius: 10px"
             />
           </div>
           <br />
           <div class="col">
-            <label><b>Task: </b></label>
+            <input
+              type="text"
+              v-model="user.description"
+              placeholder="Enter description..."
+              required
+              style="border-radius: 10px"
+            />
+          </div>
+          <br />
+          <div class="col">
             <input
               type="text"
               v-model="user.task"
               placeholder="Enter task..."
               required
+              style="border-radius: 10px"
             />
           </div>
           <br />
           <div class="col">
-            <label><b>Role:</b></label>
-            <input type="text" v-model="user.role" readonly />
+            <input
+              type="text"
+              v-model="user.role"
+              readonly
+              style="border-radius: 10px"
+            />
           </div>
           <br />
           <div class="col">
@@ -82,6 +96,7 @@ export default {
         email: "",
         age: "",
         gender: "",
+        description: "",
         task: "",
         role: "user",
       },
@@ -108,5 +123,8 @@ export default {
 <style scoped>
 .form-group {
   margin-top: 3rem;
+}
+.col {
+  border-radius: 10px;
 }
 </style>

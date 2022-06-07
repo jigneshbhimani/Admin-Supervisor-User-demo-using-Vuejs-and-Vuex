@@ -13,12 +13,14 @@
           </div>
         </div>
         <br />
-        <table class="table table-dark">
+        <table
+          class="table table-dark"
+          style="width: 70%; margin: auto; border-radius: 20px"
+        >
           <thead class="thead-dark">
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Name</th>
-              <th scope="col">Age</th>
               <th scope="col">Gender</th>
               <th scope="col">Add User</th>
               <th scope="col">Details</th>
@@ -28,7 +30,6 @@
             <tr class="data">
               <th scope="row">{{ supervisor.id }}</th>
               <td>{{ supervisor.name }}</td>
-              <td>{{ supervisor.age }}</td>
               <td>{{ supervisor.gender }}</td>
               <td>
                 <button
@@ -53,19 +54,16 @@
         </table>
       </div>
     </div>
-    <br /><br />
+    <br />
     <div class="row">
       <div class="col">
-        <button class="btn btn-outline-primary" @click="goToUser">
-          Go to User
-        </button>
+        <button class="btn btn-primary" @click="goToUser">User</button>
       </div>
       <div class="col">
-        <button class="btn btn-outline-primary" @click="goToAdmin">
-          Go To Admin
-        </button>
+        <button class="btn btn-primary" @click="goToAdmin">Admin</button>
       </div>
     </div>
+    <br />
   </div>
 </template>
 

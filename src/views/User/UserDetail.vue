@@ -1,13 +1,19 @@
 <template>
   <div class="container">
     <br /><br /><br /><br />
-    <h1>{{ details.name }}</h1>
+    <h2 style="color: blue">
+      <b
+        ><u>{{ details.name }}</u></b
+      >
+    </h2>
     <br /><br />
-    <div class="card">
-      <div class="card-body">Email: {{ details.email }}</div>
-      <div class="card-body">Age: {{ details.age }}</div>
-      <div class="card-body">Gender: {{ details.gender }}</div>
-      <div class="card-body">Task: {{ details.task }}</div>
+    <div class="card w-50" style="margin: auto">
+      <div class="card-body"><b>Email: </b>{{ details.email }}</div>
+      <div class="card-body"><b>Age: </b>{{ details.age }}</div>
+      <div class="card-body"><b>Gender: </b>{{ details.gender }}</div>
+      <div class="card-body"><b>Description: </b>{{ details.description }}</div>
+      <div class="card-body"><b>Task: </b>{{ details.task }}</div>
+      <div class="card-body"><b>Super Id: </b>{{ details.super_id }}</div>
     </div>
   </div>
 </template>

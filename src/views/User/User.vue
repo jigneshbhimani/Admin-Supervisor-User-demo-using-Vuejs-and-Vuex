@@ -13,21 +13,20 @@
           </div>
         </div>
         <br />
-        <table class="table table-dark">
+        <table class="table table-dark" style="width: 70%; margin: auto">
           <thead>
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Name</th>
-              <th scope="col">Age</th>
               <th scope="col">Gender</th>
               <th scope="col">Details</th>
+              <!-- <th scope="col">Delete</th> -->
             </tr>
           </thead>
           <tbody v-for="(user, index) in users" :key="index">
             <tr class="data">
               <th scope="row">{{ user.id }}</th>
               <td>{{ user.name }}</td>
-              <td>{{ user.age }}</td>
               <td>{{ user.gender }}</td>
               <td>
                 <button
@@ -42,24 +41,36 @@
                   Detail
                 </button>
               </td>
+              <!-- <td>
+                <button
+                  class="btn btn-outline-danger"
+                  @click="deleteUser(index)"
+                  v-if="
+                    (user.id == superuser && role) ||
+                    userRole ||
+                    user.super_id == usersRolling
+                  "
+                >
+                  Delete
+                </button>
+              </td> -->
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <br /><br />
+    <br />
     <div class="row">
       <div class="col">
-        <button class="btn btn-outline-primary" @click="goToSupervisor">
-          Go To Supervisor
+        <button class="btn btn-primary" @click="goToSupervisor">
+          Supervisor
         </button>
       </div>
       <div class="col">
-        <button class="btn btn-outline-primary" @click="goToAdmin">
-          Go To Admin
-        </button>
+        <button class="btn btn-primary" @click="goToAdmin">Admin</button>
       </div>
     </div>
+    <br />
   </div>
 </template>
 
@@ -92,6 +103,9 @@ export default {
         params: user,
       });
     },
+    // deleteUser(index) {
+    //   this.users.splice(index, 1);
+    // },
     goToSupervisor() {
       this.$router.push("/supervisor");
     },

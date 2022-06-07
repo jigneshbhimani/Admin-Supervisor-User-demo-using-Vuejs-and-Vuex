@@ -13,7 +13,10 @@
           </div>
         </div>
         <br />
-        <table class="table table-dark">
+        <table
+          class="table table-dark"
+          style="width: 70%; margin: auto; border-radius: 20px"
+        >
           <thead class="thead-dark">
             <tr>
               <th scope="col">ID</th>
@@ -48,19 +51,18 @@
         </table>
       </div>
     </div>
-    <br /><br />
+    <br />
     <div class="row">
       <div class="col">
-        <button class="btn btn-outline-primary" @click="goToSupervisor">
-          Go To Supervisor
+        <button class="btn btn-primary" @click="goToSupervisor">
+          Supervisor
         </button>
       </div>
       <div class="col">
-        <button class="btn btn-outline-primary" @click="goToUser">
-          Go To User
-        </button>
+        <button class="btn btn-primary" @click="goToUser">User</button>
       </div>
     </div>
+    <br />
   </div>
 </template>
 

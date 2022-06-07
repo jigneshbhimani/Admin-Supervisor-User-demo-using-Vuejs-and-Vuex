@@ -2,60 +2,74 @@
   <div class="id">
     <div class="card">
       <div class="card-body">
-        <form class="form-group">
+        <form class="form-group" style="margin: auto">
           <div class="col">
-            <label><b>Name: </b></label>
             <input
               type="text"
               v-model="supervisor.name"
               placeholder="Enter name..."
               required
+              style="border-radius: 10px"
             />
           </div>
           <br />
           <div class="col">
-            <label><b>Email: </b></label>
             <input
               type="email"
               v-model="supervisor.email"
               placeholder="Enter email..."
               required
+              style="border-radius: 10px"
             />
           </div>
           <br />
           <div class="col">
-            <label><b>Age: </b></label>
             <input
               type="number"
               v-model="supervisor.age"
               placeholder="Enter age..."
               required
+              style="border-radius: 10px"
             />
           </div>
           <br />
           <div class="col">
-            <label><b>Gender: </b></label>
             <input
               type="text"
               v-model="supervisor.gender"
               placeholder="Enter gender..."
               required
+              style="border-radius: 10px"
             />
           </div>
           <br />
           <div class="col">
-            <label><b>Task: </b></label>
+            <input
+              type="text"
+              v-model="supervisor.description"
+              placeholder="Enter description..."
+              required
+              style="border-radius: 10px"
+            />
+          </div>
+          <br />
+          <div class="col">
             <input
               type="text"
               v-model="supervisor.task"
               placeholder="Enter task..."
               required
+              style="border-radius: 10px"
             />
           </div>
           <br />
           <div class="col">
-            <label><b>Role:</b></label>
-            <input type="text" v-model="supervisor.role" readonly />
+            <input
+              type="text"
+              v-model="supervisor.role"
+              readonly
+              style="border-radius: 10px"
+            />
           </div>
           <br />
           <div class="col">
@@ -84,6 +98,7 @@ export default {
         email: "",
         age: "",
         gender: "",
+        description: "",
         task: "",
         role: "supervisor",
       },
