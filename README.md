@@ -1,6 +1,6 @@
 # Admin-Supervisor-User-demo-using-Vuejs-and-Vuex
 
-"""Register with Role(Admin/Supervisor/User)"""
+`Register with Role(Admin/Supervisor/User)`
 """Login with Role(Admin/Supervisor/User)"""
 """Admin List"""
 """Supervisor List"""
