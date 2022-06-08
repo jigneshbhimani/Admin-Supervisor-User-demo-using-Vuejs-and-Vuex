@@ -1,8 +1,14 @@
 # Admin-Supervisor-User-demo-using-Vuejs-and-Vuex
 
-`Register with Role(Admin/Supervisor/User)`
-`Login with auth0 (npm i auth0-js)`
-`Admin List`
+```
+Register with Role(Admin/Supervisor/User)
+```
+```
+Login with auth0 (npm i auth0-js)
+```
+```
+Admin List
+```
 `Supervisor List`
 `User List`
 
