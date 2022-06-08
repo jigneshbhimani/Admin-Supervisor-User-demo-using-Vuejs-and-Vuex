@@ -106,6 +106,7 @@ export default {
   },
   methods: {
     addSupervisor() {
+      //add Supervisor
       axios.post("http://localhost:3000/supervisors", this.supervisor).then(
         function (response) {
           console.log(response);

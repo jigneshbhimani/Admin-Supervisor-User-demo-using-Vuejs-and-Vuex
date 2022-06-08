@@ -118,9 +118,9 @@ export default {
         password: this.password,
         role: this.role,
       };
-      localStorage.setItem("registerUser", JSON.stringify(registerUser));
+      localStorage.setItem("registerUser", JSON.stringify(registerUser)); // store registerUser data in localstorage
       console.log("Register Successfully");
-      this.$router.push("/login");
+      this.$router.push("/login"); // redirect to login page
     },
   },
 };

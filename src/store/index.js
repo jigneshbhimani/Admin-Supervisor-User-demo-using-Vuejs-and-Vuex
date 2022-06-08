@@ -6,9 +6,9 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    admins: [],
-    supervisors: [],
-    users: [],
+    admins: [], // array of admins
+    supervisors: [], // array of supervisors
+    users: [], // array of users
   },
   mutations: {
     SET_ADMINS(state, val) {
@@ -23,6 +23,7 @@ export default new Vuex.Store({
   },
   actions: {
     loadAdmins({ commit }) {
+      // load admins from API
       axios
         .get("http://localhost:3000/admins")
         .then((data) => {
@@ -35,6 +36,7 @@ export default new Vuex.Store({
         });
     },
     loadSupervisors({ commit }) {
+      // load supervisors from API
       axios
         .get("http://localhost:3000/supervisors")
         .then((data) => {
@@ -47,6 +49,7 @@ export default new Vuex.Store({
         });
     },
     loadUsers({ commit }) {
+      // load users from API
       axios
         .get("http://localhost:3000/users")
         .then((data) => {

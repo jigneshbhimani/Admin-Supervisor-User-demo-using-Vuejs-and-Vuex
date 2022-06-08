@@ -54,16 +54,16 @@ export default {
   },
   methods: {
     login() {
-      var data = JSON.parse(localStorage.getItem("registerUser"));
+      var data = JSON.parse(localStorage.getItem("registerUser")); // get registerUser data from localStorage
       if (
-        data.email == this.email &&
-        data.password == this.password &&
-        data.role == this.role
+        data.email == this.email && // check if email is same (localstorage) as entered email
+        data.password == this.password && // check if password is same (localstorage) as entered password
+        data.role == this.role // check if role is same (localstorage) as entered role
       ) {
         console.log("Login Successfully");
-        this.$router.push("/admin");
+        this.$router.push("/admin"); // redirect to admin page
       } else {
-        alert("Invalid Credentials");
+        alert("Invalid Credentials"); // if credentials are not same, show alert
       }
     },
   },

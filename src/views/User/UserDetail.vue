@@ -28,11 +28,11 @@ export default {
   },
   created() {
     if (this.$route.params.id !== undefined) {
-      localStorage.setItem("details", JSON.stringify(this.$route.params));
+      localStorage.setItem("details", JSON.stringify(this.$route.params)); // set details to localStorage
     }
   },
   mounted() {
-    this.details = JSON.parse(localStorage.getItem("details"));
+    this.details = JSON.parse(localStorage.getItem("details")); // get details from localStorage
   },
 };
 </script>

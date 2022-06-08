@@ -90,7 +90,7 @@ export default {
   name: "Add User",
   data() {
     return {
-      super_id: "",
+      super_id: "", //those supervisor_id who logged in currently
       user: {
         name: "",
         email: "",
@@ -103,12 +103,13 @@ export default {
     };
   },
   mounted() {
-    this.super_id = JSON.parse(localStorage.getItem("registerUser")).id;
+    this.super_id = JSON.parse(localStorage.getItem("registerUser")).id; //get registerUser's Id from localStorage == super_id
   },
   methods: {
     addUser() {
-      this.user["super_id"] = this.super_id;
-      localStorage.setItem("user_super_id", this.super_id);
+      this.user["super_id"] = this.super_id; //add super_id column to user
+      localStorage.setItem("user_super_id", this.super_id); // store super_id in localstorage
+      // add User
       axios.post("http://localhost:3000/users", this.user).then(
         function (response) {
           console.log(response);

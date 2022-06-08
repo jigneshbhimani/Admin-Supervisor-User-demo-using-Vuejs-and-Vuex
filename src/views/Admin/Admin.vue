@@ -72,15 +72,15 @@ export default {
   name: "admin",
   data() {
     return {
-      superadmin: JSON.parse(localStorage.getItem("registerUser")).id,
-      role: JSON.parse(localStorage.getItem("registerUser")).role == "Admin",
+      superadmin: JSON.parse(localStorage.getItem("registerUser")).id, // get registerUser's Id from localStorage
+      role: JSON.parse(localStorage.getItem("registerUser")).role == "Admin", // check if registerUser's role is Admin
       supervisorRole:
-        JSON.parse(localStorage.getItem("registerUser")).role == "Supervisor",
-      userRole: JSON.parse(localStorage.getItem("registerUser")).role == "User",
+        JSON.parse(localStorage.getItem("registerUser")).role == "Supervisor", // check if registerUser's role is Supervisor
+      userRole: JSON.parse(localStorage.getItem("registerUser")).role == "User", // check if registerUser's role is User
     };
   },
   mounted() {
-    this.$store.dispatch("loadAdmins");
+    this.$store.dispatch("loadAdmins"); //dispatch actions from store
   },
   computed: {
     ...mapState(["admins"]),
@@ -96,10 +96,10 @@ export default {
       });
     },
     goToSupervisor() {
-      this.$router.push("/supervisor");
+      this.$router.push("/supervisor"); //go to supervisor page
     },
     goToUser() {
-      this.$router.push("/user");
+      this.$router.push("/user"); //go to user page
     },
   },
 };
