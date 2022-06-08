@@ -1,7 +1,7 @@
 # Admin-Supervisor-User-demo-using-Vuejs-and-Vuex
 
 `Register with Role(Admin/Supervisor/User)`
-`Login with Role(Admin/Supervisor/User)`
+`Login with auth0`
 `Admin List`
 `Supervisor List`
 `User List`
