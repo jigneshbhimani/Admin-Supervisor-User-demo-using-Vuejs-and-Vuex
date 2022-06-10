@@ -32,6 +32,12 @@ export default {
   methods: {
     loginClick() {
       login();
+      this.$notify({
+        group: "foo",
+        title: "Success",
+        text: "Login with auth0 is successfully",
+        duration: 2000,
+      });
     },
   },
 };

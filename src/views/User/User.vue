@@ -96,6 +96,12 @@ export default {
   methods: {
     logout() {
       this.$router.push("/login");
+      this.$notify({
+        group: "foo",
+        title: "Success",
+        text: "Logout is successfully",
+        duration: 4000,
+      });
     },
     showDetails(user) {
       this.$router.push({

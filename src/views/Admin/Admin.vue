@@ -88,6 +88,12 @@ export default {
   methods: {
     logout() {
       this.$router.push("/login");
+      this.$notify({
+        group: "foo",
+        title: "Success",
+        text: "Logout is successfully",
+        duration: 4000,
+      });
     },
     addSupervisor(admin) {
       this.$router.push({

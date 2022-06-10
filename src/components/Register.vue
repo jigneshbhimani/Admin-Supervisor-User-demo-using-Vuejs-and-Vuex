@@ -119,6 +119,12 @@ export default {
         role: this.role,
       };
       localStorage.setItem("registerUser", JSON.stringify(registerUser)); // store registerUser data in localstorage
+      this.$notify({
+        group: "foo",
+        title: "Success",
+        text: "Register is successfully",
+        duration: 2000,
+      });
       console.log("Register Successfully");
       this.$router.push("/login"); // redirect to login page
     },
